@@ -1,3 +1,8 @@
+## DWM Personal Build
+![The San Juan Mountains are beautiful!](/pscr_211114013208.png)
+
+This build uses fonts: Source Code Pro, [Sauce Code Pro](https://github.com/ryanoasis/nerd-fonts/tree/master/patched-fonts/SourceCodePro), [FontAwesome 5](https://fontawesome.com/)
+
 ## dwm
 
 ### Base Build
