@@ -1,0 +1,24 @@
+#!/bin//bash
+
+cur_vol=$(awk -F"[][]" '/dB/ { print $2 -0 }' <(amixer sget Master))  #Get Current Volume
+
+step=5 #Step of inc/der max:100
+
+cur_vol=$(( cur_vol ))
+
+next_vol=0
+
+[[ "$1" == "Up" || "$1" == "+" ]] && next_vol=$(( cur_vol + step))
+[[ "$1" == "Down" || "$1" == "-" ]] && next_vol=$(( cur_vol - step))
+
+if [ $next_vol -gt 100 ]; then
+	next_vol=100
+elif [ $next_vol -lt 0 ]; then
+	next_vol=0
+fi
+echo $( pamixer -i 2; pkill -RTMIN+2 dwmblocks )
+echo $( amixer sset 'Master' $next_vol% )
+
+
+
+

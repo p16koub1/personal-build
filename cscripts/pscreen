@@ -1,0 +1,19 @@
+#!/bin//bash
+DIR="/home/tandalos/media/printscreen/"
+
+
+date=""
+year=$(date +'%Y')
+year=${year: -2}
+date="${year}"
+month=$(date +'%m')
+date="${date}${month}"
+day=$(date -d "$D" '+%d')
+date="${date}${day}"
+hour=$(date +"%H%M%S")
+date="${date}${hour}"
+name="pscr_${date}.png"
+echo $( scrot $DIR$name )
+
+
+

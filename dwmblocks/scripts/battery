@@ -1,0 +1,17 @@
+#!/bin/bash 
+
+bat="$(cat /sys/class/power_supply/BAT1/capacity)"
+
+if [ "${bat}" -gt 80 ]; then
+	echo " ${bat}% "
+elif [ "${bat}" -gt 60 -a "${bat}" -lt 81 ]; then
+	echo " ${bat}% "	
+elif [ "${bat}" -gt 40 -a "${bat}" -lt 61 ]; then
+	echo " ${bat}% "
+elif [ "${bat}" -gt 20 -a "${bat}" -lt 41 ]; then
+	echo " ${bat}% "
+else
+	echo " ${bat}% "
+fi
+
+#echo "${bat}%"

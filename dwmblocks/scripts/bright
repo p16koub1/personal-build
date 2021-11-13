@@ -1,0 +1,9 @@
+#!/bin/bash 
+
+MON="eDP-1"
+
+brightness=$( xrandr --verbose --current | grep ^"$MON" -A5 | tail -n1 )
+brightness="${brightness##* }"
+
+echo " ${brightness} "
+#echo "  ${vol}%"

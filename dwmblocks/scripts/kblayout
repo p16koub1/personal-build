@@ -1,0 +1,3 @@
+#! /bin/bash 
+
+echo -e " $( /home/tandalos/packages/xkblayout-state/xkblayout-state print "%n " )"

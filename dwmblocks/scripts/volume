@@ -1,0 +1,19 @@
+#!/bin/bash 
+
+isactive="$(amixer get Master | tail -2 | grep -c '\[on\]')"
+vol="$(amixer get Master | tail -n1 | sed -r 's/.*\[(.*)%\].*/\1/')"
+
+if [ ${isactive} -eq 1 ]; then
+	if [ ${vol} -gt 66 ]; then
+		echo " ${vol}% "
+	elif [ ${vol} -lt 67 -a ${vol} -gt 33 ]; then
+		echo " ${vol}% "
+	elif [ ${vol} -lt 34 -a ${vol} -gt 0 ]; then
+		echo " ${vol}% "
+	else
+		echo " ${vol}% "
+	fi
+else
+	echo "  X"
+fi
+#echo "  ${vol}%"

@@ -1,0 +1,3 @@
+#! /bin/bash 
+disk_info="$(df -h "/home" | awk ' /[0-9]/ {print $3 "/" $2}')"
+echo -e " $disk_info "

@@ -1,0 +1,7 @@
+#!/bin//bash
+
+echo $( pamixer -i 5; pkill -RTMIN+5 dwmblocks )
+
+
+
+
